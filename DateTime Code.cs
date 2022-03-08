@@ -15,7 +15,7 @@ namespace ConsoleApplication7
             string dateString;
                 
             Console.WriteLine("Enter date (mounth/day/year h:m:s AM/PM): ");
-            dateString = Convert.ToString(Console.ReadLine()); // месяц/день/год ч:м:с АМ/РМ
+            dateString = Convert.ToString(Console.ReadLine()); // РјРµСЃСЏС†/РґРµРЅСЊ/РіРѕРґ С‡:Рј:СЃ РђРњ/Р Рњ
             DateTime MyDate = DateTime.Parse(dateString, System.Globalization.CultureInfo.InvariantCulture);
             Console.WriteLine("This day: " + MyDate);
             Console.WriteLine("Day of Week: "+ MyDate.DayOfWeek);
@@ -23,13 +23,13 @@ namespace ConsoleApplication7
             var greg = new GregorianCalendar();
             
             if (greg.GetWeekOfYear(MyDate, CalendarWeekRule.FirstDay, DayOfWeek.Thursday) / 2 == 0)
-                 Console.WriteLine("Week even"); //чётная
-            else Console.WriteLine("Odd week"); //нечётная
+                 Console.WriteLine("Week even"); //С‡С‘С‚РЅР°СЏ
+            else Console.WriteLine("Odd week"); //РЅРµС‡С‘С‚РЅР°СЏ
 
             var numWeekend = 6; // 0=sunday
             var numToday = 4;
             var dayForWeekend = ((DayOfWeek)numWeekend - ((DayOfWeek)numToday));
-            Console.WriteLine("Дней до выходных (до воскресенья): " + dayForWeekend);
+            Console.WriteLine("Г„Г­ГҐГ© Г¤Г® ГўГ»ГµГ®Г¤Г­Г»Гµ (Г¤Г® ГўГ®Г±ГЄГ°ГҐГ±ГҐГ­ГјГї): " + dayForWeekend);
 
 
             Console.ReadKey();
